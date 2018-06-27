@@ -1,0 +1,25 @@
+/* This code makes Karel go around the racetrack
+* 8 times and puts a ball each time in each corner
+*/
+
+public class RacingKarel extends SuperKarel
+{
+    public void run()
+    {
+        for (int i = 0; i < 32; i++)
+        {
+            moveToWall();    
+        }
+        
+    }
+
+    private void moveToWall()
+    {
+        while (frontIsClear())
+        {
+            move();
+        }
+        putBall();
+        turnLeft();
+    }
+}
